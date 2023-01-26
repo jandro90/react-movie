@@ -1,6 +1,6 @@
 # Instructions to use:
 clone project, open terminal in root folder and use:
- - npm i
+ - npm install
  - npm run dev
 
 # Description:
