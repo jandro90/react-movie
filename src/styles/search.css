@@ -1,0 +1,60 @@
+/* Style the search form */
+form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+  
+  /* Style the search input */
+  .search-search-input {
+    border: 1px solid #ccc;
+    outline: none;
+    background: #fff;
+    border-radius: 4px 0 0 4px;
+    padding: 0.5em;
+    font-size: 1em;
+    flex: 1;
+  }
+  
+  /* Style the search button */
+  .search-search-button {
+    border: none;
+    outline: none;
+    background: #006699;
+    color: #fff;
+    font-size: 1em;
+    padding: 0.5em;
+    border: 1px solid #006699;  
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  /* Style the search filter */
+  .search-filter {
+    display: flex;
+  }
+  
+  /* Style the filter buttons */
+  .search-filter button {
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #000;
+    font-size: 0.9em;
+    padding: 0.5em;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 0.5em;
+  }
+  
+  /* Style the active filter button */
+  .search-filter button.active {
+    background: #006699;
+    color: #fff;
+  }
+  
+  /* Use a nice font */
+  * {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
