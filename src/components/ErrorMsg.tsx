@@ -1,11 +1,12 @@
+import { useTranslation } from "react-i18next";
+
 export const ErrorMsg = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="text-center m-2">
-            <h2>Impossible Load Data</h2>
-            <p>
-                please refresh the page and make sure you are introducing
-                correct data.
-            </p>
+            <h2>{t('ERROR.IMPOSIBLE_LOAD_DATA')}</h2>
+            <p>{t('ERROR.REFRESH_TRY_AGAIN')}</p>
         </div>
     );
 };

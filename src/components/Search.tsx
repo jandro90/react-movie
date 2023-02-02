@@ -1,10 +1,12 @@
 import { SyntheticEvent, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 
 import('../styles/search.css');
 
 export const Search = ({setSearchOnState}: any) => {
+    const { t } = useTranslation();
     const searchStoreValue = useSelector((state: RootState) => state.app.search);
     const inputSearchRef: any = useRef(null);
 
@@ -35,7 +37,7 @@ export const Search = ({setSearchOnState}: any) => {
                 />
 
                 <button type="submit" className="search-search-button">
-                    Search
+                    { t('APP.SEARCH') }
                 </button>
             </form>
         </div>

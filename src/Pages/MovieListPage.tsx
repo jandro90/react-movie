@@ -8,12 +8,15 @@ import { Search } from "../components/Search";
 import { RootState } from "../store";
 import { useEffect } from "react";
 import { useRefresh } from '../hooks/useRefresh';
+import { ErrorMsg } from "../components/ErrorMsg";
+import { useTranslation } from "react-i18next";
 
 const MovieListPage = () => {   
     // Hooks 
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const searchStoreValue = useSelector((state: RootState) => state.app.search);
+    const { t } = useTranslation();
 
     const { data, error, isLoading, refetch  } = useGetShowsByNameQuery(searchStoreValue, {skip: searchStoreValue === ''});
     const { getImg, getGenres, getName } = useShow();
@@ -35,7 +38,7 @@ const MovieListPage = () => {
 
     // Views
     if (error) {
-        return <p> Impossible Load Data, please refresh the page.</p>
+        return <ErrorMsg />
     }
     else if (isLoading) {
         return <Loader />
@@ -61,14 +64,14 @@ const MovieListPage = () => {
                                 </h5>
                                 <p className="card-text">
                                     <i className="fa-solid fa-user"></i>{" "}
-                                    <b>Genres:</b>{" "}
+                                    <b>{t('APP.GENRES')}:</b>{" "}
                                     {getGenres(element?.show?.genres)}{" "}
                                 </p>
                                 <button
                                     className="btn btn-primary"
                                     onClick={() => goToDetails(element)}
                                 >
-                                    Details
+                                    {t('APP.DETAILS')}
                                 </button>
                             </div>
                         </div>

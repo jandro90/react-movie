@@ -42,6 +42,7 @@ export const About = () => {
             </ul>
             <li><b>Extras:</b></li>
             <ul>
+                <li>Added translations with <b>I18n React</b> </li>
                 <li>
                     I create a fake login, the objective is that when a user is logged in, to
                     persist that login avoiding to lose the user when the

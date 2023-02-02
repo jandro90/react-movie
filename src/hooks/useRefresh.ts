@@ -8,7 +8,7 @@ export const useRefresh = () => {
 
 
     const refreshDataWithAnimation = (fetch: any) => {
-        fetch('papiro');
+        fetch();
         scrollToTop();
     }
 

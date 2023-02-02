@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 import { ErrorMsg } from "../components/ErrorMsg";
 import { Loader } from "../components/Loader";
@@ -5,6 +6,7 @@ import { useGetDetailShow } from "../hooks/useGetDetailShow";
 import { useShow } from "../hooks/useShow";
 
 const MovieDetailPage = () => {
+    const { t } = useTranslation();
     const { id } = useParams();
     const navigate = useNavigate();
     const { selectedShow, data, isLoading, error } = useGetDetailShow(id);
@@ -16,7 +18,7 @@ const MovieDetailPage = () => {
     if (selectedShow || data) {
         return (
             <div className="m-2">
-                <h3 className="text-center"> Show Detail</h3>
+                <h3 className="text-center"> { t('APP.SHOW_DETAIL') }</h3>
                 <hr />
                 <div className="d-flex justify-content-center m-2">
                     <div className="card" style={{ width: "18rem" }}>
@@ -45,20 +47,20 @@ const MovieDetailPage = () => {
                         </div>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">
-                                <b>Genres: </b>
+                                <b>{t('APP.GENRES')}: </b>
                                 {getGenres(
                                     selectedShow?.show?.genres || data?.genres
                                 )}
                             </li>
                             <li className="list-group-item">
-                                <b>Languague:</b>{" "}
+                                <b>{t('APP.LANG')}</b>{" "}
                                 {getLang(
                                     selectedShow?.show?.language ||
                                         data?.language
                                 )}
                             </li>
                             <li className="list-group-item">
-                                <b>Schedule: </b>
+                                <b>{t('APP.SCHEDULE')}: </b>
                                 {getDays(
                                     selectedShow?.show?.schedule?.days ||
                                         data?.schedule?.days
@@ -67,13 +69,13 @@ const MovieDetailPage = () => {
                             <li className="list-group-item">
                                 {(selectedShow?.score || data?.score) && (
                                     <>
-                                        <b>Score: </b>{getScore(selectedShow?.score || data?.score)}
+                                        <b>{t('APP.SCORE')}: </b>{getScore(selectedShow?.score || data?.score)}
                                     </>
                                 )}
                             </li>
                         </ul>
                         <div className="card-body">
-                          <button className="btn btn-primary" onClick={() => navigate(-1)}>Go Back</button>
+                          <button className="btn btn-primary" onClick={() => navigate(-1)}>{t('APP.BACK')}</button>
                         </div>
                     </div>
                 </div>

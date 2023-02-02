@@ -1,8 +1,11 @@
 import('../styles/LoginView.css');
+import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import { Loader } from '../components/Loader';
 import { useLogin } from '../hooks/useLogin';
 
 const LoginView = () => {
+  const { t } = useTranslation();  
   const { logInUser, isLoading } = useLogin();
 
   const onSubmit = (event: React.SyntheticEvent | any) => {
@@ -17,7 +20,7 @@ const LoginView = () => {
     return (
         <div className="wrapper">
             <form className="form-signin" onSubmit={onSubmit}>
-                <h2 className="form-signin-heading">Please login</h2>
+                <h2 className="form-signin-heading">{t('LOGIN.PLEASE_LOGIN')}</h2>
                 <input
                     type="text"
                     className="form-control"
@@ -34,7 +37,7 @@ const LoginView = () => {
                     className="btn btn-lg btn-primary btn-block m-2"
                     type="submit"
                 >
-                    Login
+                    {t('LOGIN.LOGIN')}
                 </button>
             </form>
         </div>

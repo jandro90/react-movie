@@ -1,0 +1,27 @@
+{
+    "LOGIN": {
+        "PLEASE_LOGIN": "Please Login",
+        "LOGIN": "Login"
+    },
+    "APP": {
+        "SHOW_DETAIL": "Show Detail",
+        "GENRES": "Genres",
+        "LANG": "Languages",
+        "SCHEDULE": "Schedule",
+        "SCORE": "Score",
+        "BACK": "Go Back",
+        "DETAILS": "Details",
+        "LOGOUT": "Logout",
+        "SEARCH": "Search",
+        "HOME": "Home",
+        "ABOUT": "About"
+    },
+    "ERROR": {
+        "IMPOSIBLE_LOAD_DATA": "Impossible Load Data",
+        "REFRESH_TRY_AGAIN": "please refresh the page and make sure you are introducing correct data"
+    },
+    "LOADER": {
+        "LOADING_DATA": "...Loading Data...",
+        "BE_PATIENT": "Please be patient :)"
+    }
+}
