@@ -35,5 +35,6 @@ I have created this project to use all the knowledge I have learned about **Reac
      -   Create custom reducers for every Slice
 
 *   **Extras:**
+     -   Using Translations with **i18n React**
 
      *   I create a fake login, the objective is that when a user is logged in, to persist that login avoiding to lose the user when the page is refreshed.     The main objective is not to show the login page if the user is logged in and in case the user is NOT logged in, to avoid enter in any path of the application.
